@@ -68,15 +68,15 @@ namespace SharedLibrary
         public static readonly string QUEUE_NAME        = "PlayStoreQueue";
 
         // MongoDB - Remote Server
-        public static readonly string MONGO_SERVER           = "mobiledata.bigdatacorp.com.br"; 
-        public static readonly string MONGO_PORT             = "21766";
-        public static readonly string MONGO_USER             = "GitHubCrawlerUser";
-        public static readonly string MONGO_PASS             = "g22LrJvULU5B";
-        public static readonly string MONGO_DATABASE         = "PlayStore";
+        public static readonly string MONGO_SERVER           = "127.0.0.1"; 
+        public static readonly string MONGO_PORT             = "27017";
+        public static readonly string MONGO_USER             = "siteUserAdmin";
+        public static readonly string MONGO_PASS             = "password";
+        public static readonly string MONGO_DATABASE         = "admin";
         public static readonly string MONGO_COLLECTION       = "ProcessedApps_2015";
         public static readonly string REVIEWS_COLLECTION     = "ProcessedReviews";
         public static readonly string QUEUED_APPS_COLLECTION = "QueuedApps_2015";
-        public static readonly string MONGO_AUTH_DB          = "PlayStore";
+        public static readonly string MONGO_AUTH_DB          = "admin";
         public static readonly int    MONGO_TIMEOUT          = 10000;
 
         // Date Time Format
