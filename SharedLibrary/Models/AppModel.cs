@@ -20,6 +20,7 @@ namespace SharedLibrary.Models
         public double   Price                  {get;set;}
         public double   Reviewers              {get;set;}
         public string   CoverImgUrl            {get;set;}
+        public string   Screenshot             {get;set;}
         public string   Description            {get;set;}
         public Score    Score                  {get;set;}
         public DateTime LastUpdateDate         {get;set;}

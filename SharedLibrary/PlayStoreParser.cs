@@ -77,6 +77,9 @@ namespace SharedLibrary
             currentNode           = map.DocumentNode.SelectSingleNode (Consts.APP_COVER_IMG);
             parsedApp.CoverImgUrl = currentNode == null ? String.Empty : currentNode.Attributes["src"].Value;
 
+            //Parsing ScreenShot Url
+            currentNode = map.DocumentNode.SelectSingleNode(Consts.APP_SCREENSHOT_IMG);
+            parsedApp.Screenshot = currentNode == null ? String.Empty : currentNode.Attributes["src"].Value;
             // Parsing App Category
             currentNode          = map.DocumentNode.SelectSingleNode (Consts.APP_CATEGORY);
 

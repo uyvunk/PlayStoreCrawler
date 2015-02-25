@@ -44,6 +44,8 @@ namespace SharedLibrary
         public static readonly string APP_TWO_STARS      = "//div[@class='rating-histogram']/div[@class='rating-bar-container two']/span[@class='bar-number']";
         public static readonly string APP_ONE_STARS      = "//div[@class='rating-histogram']/div[@class='rating-bar-container one']/span[@class='bar-number']";
         public static readonly string APP_COVER_IMG      = "//div[@class='details-info']/div[@class='cover-container']/img[@class='cover-image']";
+        //public static readonly string APP_SCREENSHOT_IMG = "//div[@class='details-section screenshots']/div[@class='details-section-contents']/div[@class='details-section-body expandable']//div[@class='expand-pages-container']/div[@class='expand-page']/div[@class='screenshot-container']/div[@class='screenshot-align']//img[@class='full-screenshot clickable']";
+        public static readonly string APP_SCREENSHOT_IMG = "//div[@class='details-wrapper apps square-cover id-track-partial-impression']/div[@class='details-section screenshots']/div[@class='details-section-contents']/div[@class='details-section-body expandable']/div[1]/div[@class='expand-pages-container']/div[@class='expand-page']/div[@class='screenshot-container']/div[@class='screenshot-align']/div[@class='screenshot-align-inner']/img[@class='full-screenshot clickable']";
         public static readonly string APP_UPDATE_DATE    = "//div[@class='meta-info']/div[@itemprop='datePublished']";
         public static readonly string APP_SIZE           = "//div[@class='meta-info']/div[@itemprop='fileSize']";
         public static readonly string APP_VERSION        = "//div[@class='content' and @itemprop='softwareVersion']";
