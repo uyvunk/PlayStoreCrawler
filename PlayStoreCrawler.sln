@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayStoreCrawler", "PlayStoreCrawler\PlayStoreCrawler.csproj", "{412FE7DE-BC68-412F-8826-EDCE3E29A5F6}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticsPlayground", "AnalyticsPlayground\AnalyticsPlayground.csproj", "{A2C34F66-C5AF-4610-9BF2-0DB7189613D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeenIOUploader", "KeenIOUploader\KeenIOUploader.csproj", "{E78E3706-6E6D-49E7-98FB-72688025BEFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler_Rf", "Crawler_Rf\Crawler_Rf.csproj", "{31FDB6C4-750F-4B75-B92D-283704FF78DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{7FD9A5A4-50EB-4A5D-98F1-6AF28E023B8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{E78E3706-6E6D-49E7-98FB-72688025BEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E78E3706-6E6D-49E7-98FB-72688025BEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E78E3706-6E6D-49E7-98FB-72688025BEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FDB6C4-750F-4B75-B92D-283704FF78DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FDB6C4-750F-4B75-B92D-283704FF78DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FDB6C4-750F-4B75-B92D-283704FF78DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FDB6C4-750F-4B75-B92D-283704FF78DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD9A5A4-50EB-4A5D-98F1-6AF28E023B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD9A5A4-50EB-4A5D-98F1-6AF28E023B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD9A5A4-50EB-4A5D-98F1-6AF28E023B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD9A5A4-50EB-4A5D-98F1-6AF28E023B8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

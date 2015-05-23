@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using BDC.BDCCommons;
 using SharedLibrary;
@@ -15,67 +16,120 @@ namespace PlayStoreCrawler
          /// Entry point of the crawler
          /// </summary>
          /// <param name="args"></param>
-        static void Main (string[] args)
+        public static void Main (string[] args)
         {
-            // Crawling App Store using all characters as the Search Input
-            CrawlStore ("a");
-            CrawlStore ("b");
-            CrawlStore ("c");
-            CrawlStore ("d");
-            CrawlStore ("e");
-            CrawlStore ("f");
-            CrawlStore ("g");
-            CrawlStore ("h");
-            CrawlStore ("i");
-            CrawlStore ("j");
-            CrawlStore ("K");
-            CrawlStore ("L");
-            CrawlStore ("M");
-            CrawlStore ("N");
-            CrawlStore ("O");
-            CrawlStore ("P");
-            CrawlStore ("Q");
-            CrawlStore ("R");
-            CrawlStore ("S");
-            CrawlStore ("T");
-            CrawlStore ("U");
-            CrawlStore ("V");
-            CrawlStore ("X");
-            CrawlStore ("Y");
-            CrawlStore ("Z");
-            CrawlStore ("W");
-            /// ... Keep Adding characters / search terms in order to increase the crawler's reach
-            // APP CATEGORIES
-            CrawlStore ("BOOKS");
-            CrawlStore ("BUSINESS");
-            CrawlStore ("COMICS");
-            CrawlStore ("COMMUNICATION");
-            CrawlStore ("EDUCATION");
-            CrawlStore ("ENTERTAINMENT");
-            CrawlStore ("FINANCE");
-            CrawlStore ("HEALTH");
-            CrawlStore ("LIFESTYLE");
-            CrawlStore ("LIVE WALLPAPER");
-            CrawlStore ("MEDIA");
-            CrawlStore ("MEDICAL");
-            CrawlStore ("MUSIC");
-            CrawlStore ("NEWS");
-            CrawlStore ("PERSONALIZATION");
-            CrawlStore ("PHOTOGRAPHY");
-            CrawlStore ("PRODUCTIVITY");
-            CrawlStore ("SHOPPING");
-            CrawlStore ("SOCIAL");
-            CrawlStore ("SPORTS");
-            CrawlStore ("TOOLS");
-            CrawlStore ("TRANSPORTATION");
-            CrawlStore ("TRAVEL");
-            CrawlStore ("WEATHER");
-            CrawlStore ("WIDGETS");
-            CrawlStore ("ARCADE");
-            CrawlStore ("BRAIN");
-            CrawlStore ("CASUAL");
-            CrawlStore ("CARDS");
-            CrawlStore ("RACING");
+            // TODO: vukn
+            // 1.   need to add 2 options, 1 for reading the input from the file, and the second one would
+            //      using the ordinary way to crawl
+            // 2.   if the user want to read from file, get the path and read it. Separate criteria
+            //      on each line of input file ( one criteria per line)
+            // 3.   Call the helper function CrawlStore on the criteria
+
+            // Give 2 options, and ask for user input
+            int option = 0;
+            do
+            {
+                System.Console.WriteLine("Please enter 1 to read from a file.");
+                System.Console.WriteLine("OR enter 2 to do an automatic crawl.");
+                option = Convert.ToInt32(Console.ReadLine());   // read in option
+            } while (option != 1 && option != 2);
+
+            // If user want to read content from file:
+            if (option == 1)
+            {
+                // Asking user for the location of the input text file
+                string path;
+                do
+                {
+                    System.Console.WriteLine("Enter full path to the Input text file");
+                    System.Console.WriteLine();
+                    path = Console.ReadLine();
+                } while (path == null);
+
+                // when input is not null, start to read from the input
+                try
+                {
+                    // read all lines of the input into 1 array lines
+                    string[] lines = System.IO.File.ReadAllLines(path);
+
+                    // Display the file contents by using a foreach loop.
+                    System.Console.WriteLine("Reading the input . . .  ");
+                    // Read the file line per line, and call the CrawlStore on each line
+                    foreach (string line in lines)
+                    {
+                        Console.WriteLine("Crawling category:\t" + line);
+                        // Call the helper with the correct category
+                        CrawlStore(line);
+                    }
+                }
+                catch (IOException)
+                {
+                    Console.WriteLine("File doesnt exist in : " + path);
+                }
+
+            }
+            else    // If user want to use Ordinary way
+            {
+                // Crawling App Store using all characters as the Search Input
+                CrawlStore("a");
+                CrawlStore("b");
+                CrawlStore("c");
+                CrawlStore("d");
+                CrawlStore("e");
+                CrawlStore("f");
+                CrawlStore("g");
+                CrawlStore("h");
+                CrawlStore("i");
+                CrawlStore("j");
+                CrawlStore("K");
+                CrawlStore("L");
+                CrawlStore("M");
+                CrawlStore("N");
+                CrawlStore("O");
+                CrawlStore("P");
+                CrawlStore("Q");
+                CrawlStore("R");
+                CrawlStore("S");
+                CrawlStore("T");
+                CrawlStore("U");
+                CrawlStore("V");
+                CrawlStore("X");
+                CrawlStore("Y");
+                CrawlStore("Z");
+                CrawlStore("W");
+                /// ... Keep Adding characters / search terms in order to increase the crawler's reach
+                // APP CATEGORIES
+                CrawlStore("BOOKS");
+                CrawlStore("BUSINESS");
+                CrawlStore("COMICS");
+                CrawlStore("COMMUNICATION");
+                CrawlStore("EDUCATION");
+                CrawlStore("ENTERTAINMENT");
+                CrawlStore("FINANCE");
+                CrawlStore("HEALTH");
+                CrawlStore("LIFESTYLE");
+                CrawlStore("LIVE WALLPAPER");
+                CrawlStore("MEDIA");
+                CrawlStore("MEDICAL");
+                CrawlStore("MUSIC");
+                CrawlStore("NEWS");
+                CrawlStore("PERSONALIZATION");
+                CrawlStore("PHOTOGRAPHY");
+                CrawlStore("PRODUCTIVITY");
+                CrawlStore("SHOPPING");
+                CrawlStore("SOCIAL");
+                CrawlStore("SPORTS");
+                CrawlStore("TOOLS");
+                CrawlStore("TRANSPORTATION");
+                CrawlStore("TRAVEL");
+                CrawlStore("WEATHER");
+                CrawlStore("WIDGETS");
+                CrawlStore("ARCADE");
+                CrawlStore("BRAIN");
+                CrawlStore("CASUAL");
+                CrawlStore("CARDS");
+                CrawlStore("RACING");
+            }
         }
 
         /// <summary>

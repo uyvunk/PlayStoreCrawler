@@ -19,3 +19,23 @@ C:\Users\vu\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\HtmlAgi
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.csprojResolveAssemblyReference.cache
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.exe
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\PlayStoreCrawler.exe.config
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.exe
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\PlayStoreCrawler.exe
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\PlayStoreCrawler.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\BDCCommons.Log.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\SharedLibrary.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\Ude.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\WebUtilsLib.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\MongoDB.Bson.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\MongoDB.Driver.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\SharedLibrary.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\BDCCommons.Log.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\WebUtilsLib.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\MongoDB.Bson.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\MongoDB.Driver.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\PlayStoreCrawler\obj\Debug\PlayStoreCrawler.csprojResolveAssemblyReference.cache

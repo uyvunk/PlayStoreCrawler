@@ -9,3 +9,14 @@ C:\Users\vu\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\MongoDB.Dr
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.dll
 C:\Users\vu\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\SharedLibrary.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\SharedLibrary.pdb
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\MongoDB.Bson.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\MongoDB.Driver.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\MongoDB.Bson.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\bin\Debug\MongoDB.Driver.xml
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.dll
+C:\Users\Vu Nguyen\Documents\GitHub\PlayStoreCrawler\SharedLibrary\obj\Debug\SharedLibrary.pdb

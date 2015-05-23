@@ -1,0 +1,7 @@
+Note to run the MongoDB:
+
+Start mongod: mongod --dbpath=e:\crawler_data\mongoDB\data
+Start mongo with 	user : siteUserAdmin
+					pass:	password
+					authenticationDatabase: admin
+					
