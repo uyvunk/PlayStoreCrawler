@@ -111,8 +111,44 @@ namespace PlayStoreWorker
                         // Parsing Useful App Data
                         AppModel parsedApp = parser.ParseAppPage (response, appUrl);
 
+                        // TODO: Vu
+                        // Here is where insert the app into the ProcessedApps Database.
+                        // Attemp to check for the condition base on number of instalation and rating
+
+                        // First split the string into the string array
+                        string[] installations;
+                        string[] separators = new string[] { " - " };
+                        // Getting the Installation number for the current app
+                        installations = parsedApp.Instalations.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                        installations[0] = installations[0].Replace(",", "");   // replace the "," in the number of installations
+                        installations[1] = installations[1].Replace(",", "");
+                        long install_num = 0;
+                        try {
+                            install_num = Convert.ToInt64(installations[0]);
+                        }
+                        catch (OverflowException) {
+                            Console.WriteLine("{0} is outside the range of the Int64 type.");
+                        }
+                        catch (FormatException) {
+                            Console.WriteLine("The {0} value '{1}' is not recognizable");
+                        }
+                        
+                        // Getting the rating for the current app
+                        double rating = parsedApp.Score.Total;
+
+                        // Getting the developer name ( company name)
+                        string developer = parsedApp.Developer;
+
+                        
+                        // if the installation number is less than 500,000 
+                        // OR rating less than 3 stars
+                        // -> skip the app
+                        if (install_num < 500000 || rating < 3)
+                        {
+                            ProcessingWorked = false;
+                        }
                         // Inserting App into Mongo DB Database
-                        if (!mongoDB.Insert<AppModel>(parsedApp))
+                        if (ProcessingWorked && !mongoDB.Insert<AppModel>(parsedApp))
                         {
                             ProcessingWorked = false;
                         }
