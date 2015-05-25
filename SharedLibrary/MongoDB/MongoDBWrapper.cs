@@ -134,7 +134,7 @@ namespace SharedLibrary.MongoDB
         /// <returns>Operation status. True if worked, false otherwise</returns>
         public bool AddToQueue (string appUrl)
         {
-            return _database.GetCollection<QueuedApp> (Consts.QUEUED_APPS_COLLECTION).SafeInsert (new QueuedApp { Url = appUrl, IsBusy = false});
+            return _database.GetCollection<QueuedApp> (Consts.QUEUED_APPS_COLLECTION).SafeInsert (new QueuedApp { Url = appUrl, IsBusy = false, Key = "NA", NotMeetCrit = false });
         }
 
         /// <summary>
@@ -198,6 +198,28 @@ namespace SharedLibrary.MongoDB
             var query = Query.EQ("Url", url);
 
             _database.GetCollection (_collectionName).Update (query, Update.Set("Uploaded", true));
+        }
+
+        /// <summary>
+        /// Finds an app that is "Not Busy" and modifies it's status
+        /// to "Busy" atomically so that no other worker will try to process it
+        /// on the same time
+        /// </summary>
+        /// <returns>Found app, if any</returns>
+        public bool ChangeNotMeetCrit(string url)
+        {
+            // Mongo Query
+            var mongoQuery = Query.EQ("Url", url);
+            var updateStatement = Update.Set("NotMeetCrit", true);
+
+            // Finding a Not Busy App, and updating its state to busy
+            var mongoResponse = _database.GetCollection<QueuedApp>(Consts.QUEUED_APPS_COLLECTION).FindAndModify(mongoQuery, null, updateStatement, false);
+            if (mongoResponse != null)
+            {
+                Console.WriteLine("Has change status to NotMeetCrit");
+                return true;
+            }
+            return false;
         }
     }
 }

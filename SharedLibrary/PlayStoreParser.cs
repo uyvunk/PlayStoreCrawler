@@ -20,8 +20,8 @@ namespace SharedLibrary
         {
             // Loading Html Document with Play Store content
             HtmlDocument map = new HtmlDocument ();
-            map.LoadHtml (response);
-
+            map.LoadHtml(response);
+            // Vu: HTMLNodeCollection: A list type of HTML nodes
             // Checking for nodes
             HtmlNodeCollection nodes = map.DocumentNode.SelectNodes (Consts.APP_LINKS);
 

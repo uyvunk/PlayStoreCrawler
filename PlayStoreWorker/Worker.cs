@@ -58,6 +58,13 @@ namespace PlayStoreWorker
                         continue;
                     }
 
+                    // Vu
+                    // Check if the app does not meet criteria
+                    if (app.NotMeetCrit)
+                    {
+                        Console.WriteLine("App Not meet Criteria, Skipped.");
+                    }
+
                     // Configuring server and Issuing Request
                     server.Headers.Add (Consts.ACCEPT_LANGUAGE);
                     server.Host              = Consts.HOST;
@@ -111,7 +118,7 @@ namespace PlayStoreWorker
                         // Parsing Useful App Data
                         AppModel parsedApp = parser.ParseAppPage (response, appUrl);
 
-                        // TODO: Vu
+                        // Vu
                         // Here is where insert the app into the ProcessedApps Database.
                         // Attemp to check for the condition base on number of instalation and rating
 
@@ -133,23 +140,33 @@ namespace PlayStoreWorker
                             Console.WriteLine("The {0} value '{1}' is not recognizable");
                         }
                         
+                        bool beRemoved = false;
                         // Getting the rating for the current app
                         double rating = parsedApp.Score.Total;
 
                         // Getting the developer name ( company name)
                         string developer = parsedApp.Developer;
-
+                        // TODO: Vu
+                        // Need to pass the input string to the QueuedApps DB so that we can refer
+                        // to it as a key word to check for correct Developer
                         
                         // if the installation number is less than 500,000 
                         // OR rating less than 3 stars
                         // -> skip the app
-                        if (install_num < 500000 || rating < 3)
+
+                        string appName = parsedApp.Name;
+                        if (install_num < 1000000 || rating < 3.5)
                         {
-                            ProcessingWorked = false;
+                            Console.WriteLine("Cannot add app <" + appName + "> -- NOT MEET CRITERIA");
+                            // TODO: Update the NotMeetCriteria
+                            // Removing App from the database
+                            beRemoved = true;
+                            mongoDB.RemoveFromQueue(app.Url);
                         }
                         // Inserting App into Mongo DB Database
-                        if (ProcessingWorked && !mongoDB.Insert<AppModel>(parsedApp))
+                        if (ProcessingWorked && !mongoDB.Insert<AppModel>(parsedApp) && !beRemoved == true)
                         {
+                            Console.WriteLine("Cannot add app <" + appName + "> -- FAIL TO ADD TO Database");
                             ProcessingWorked = false;
                         }
 
@@ -162,11 +179,21 @@ namespace PlayStoreWorker
                         else // On the other hand, if processing worked, removes it from the database
                         {
                             // Console Feedback, Comment this line to disable if you want to
-                            Console.WriteLine("Inserted App : " + parsedApp.Name);
-
-                            mongoDB.RemoveFromQueue(app.Url);
+                            if (!beRemoved)
+                            {
+                                Console.WriteLine("Inserted App : " + parsedApp.Name);
+                                 mongoDB.RemoveFromQueue(app.Url);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Removed App : " + parsedApp.Name);
+                            }                           
                         }
 
+
+                        // Vu
+                        // TRY TO NOT DOWNLOAD THE RELATED APPS
+                        /*
                         // Counters for console feedback only
                         int extraAppsCounter = 0, newExtraApps = 0;
 
@@ -192,6 +219,8 @@ namespace PlayStoreWorker
 
                         // Console Feedback
                         Console.WriteLine ("Queued " + newExtraApps + " / " + extraAppsCounter + " related apps");
+                        
+                        */
 
                         // Hiccup (used to minimize blocking issues)
                         Thread.Sleep (300);
