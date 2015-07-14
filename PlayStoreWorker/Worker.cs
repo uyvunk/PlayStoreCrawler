@@ -140,37 +140,36 @@ namespace PlayStoreWorker
                             Console.WriteLine("The {0} value '{1}' is not recognizable");
                         }
                         
-                        bool beRemoved = false;
+                        bool removed = false;
                         // Getting the rating for the current app
                         double rating = parsedApp.Score.Total;
 
                         // Getting the developer name ( company name)
                         string developer = parsedApp.Developer;
-                        // TODO: Vu
-                        // Need to pass the input string to the QueuedApps DB so that we can refer
-                        // to it as a key word to check for correct Developer
-                        
-                        // if the installation number is less than 500,000 
+                                               
+                        // if the installation number is less than 1000,000 
                         // OR rating less than 3 stars
+                        // OR appName is empty
                         // -> skip the app
 
                         string appName = parsedApp.Name;
-                        if (install_num < 1000000 || rating < 3.5)
+                        if (install_num < 1000000 || rating < 3.5 || appName == "" || appName == null)
                         {
                             Console.WriteLine("Cannot add app <" + appName + "> -- NOT MEET CRITERIA");
                             // TODO: Update the NotMeetCriteria
                             // Removing App from the database
-                            beRemoved = true;
                             mongoDB.RemoveFromQueue(app.Url);
+                            removed = true;
                         }
-                        // Inserting App into Mongo DB Database
-                        if (ProcessingWorked && !mongoDB.Insert<AppModel>(parsedApp) && !beRemoved == true)
+                        // Inserting App into MONGO_COLLECTION collection
+                        // if the Insert func return false, then print a message indicates that
+                        if (ProcessingWorked && !mongoDB.Insert<AppModel>(parsedApp) && !removed)
                         {
                             Console.WriteLine("Cannot add app <" + appName + "> -- FAIL TO ADD TO Database");
                             ProcessingWorked = false;
                         }
 
-                        // If the processing failed, do not remove the app from the database, instead, keep it and flag it as not busy 
+                        // If processing failed, do not remove the app from the database, instead, keep it and flag it as not busy 
                         // so that other workers can try to process it later
                         if (!ProcessingWorked)
                         {
@@ -179,7 +178,7 @@ namespace PlayStoreWorker
                         else // On the other hand, if processing worked, removes it from the database
                         {
                             // Console Feedback, Comment this line to disable if you want to
-                            if (!beRemoved)
+                            if (!removed)
                             {
                                 Console.WriteLine("Inserted App : " + parsedApp.Name);
                                  mongoDB.RemoveFromQueue(app.Url);
