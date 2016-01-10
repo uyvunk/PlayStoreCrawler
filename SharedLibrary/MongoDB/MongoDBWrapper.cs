@@ -153,7 +153,7 @@ namespace SharedLibrary.MongoDB
             var mongoResponse = _database.GetCollection<QueuedApp> (Consts.QUEUED_APPS_COLLECTION).FindAndModify (mongoQuery, null, updateStatement, false);
 
             // Checking for query error or no app found
-            if (mongoResponse == null || mongoResponse.Response == null)
+            if (mongoResponse == null || mongoResponse.Response == null || mongoResponse.ModifiedDocument == null)
             {
                 return null;
             }

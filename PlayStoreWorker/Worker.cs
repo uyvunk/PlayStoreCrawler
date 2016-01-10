@@ -153,7 +153,7 @@ namespace PlayStoreWorker
                         // -> skip the app
 
                         string appName = parsedApp.Name;
-                        if (install_num < 1000000 || rating < 3.5 || appName == "" || appName == null)
+                        if (install_num < Consts.MIN_INSTALL || rating < Consts.MIN_RATING || appName == "" || appName == null)
                         {
                             Console.WriteLine("Cannot add app <" + appName + "> -- NOT MEET CRITERIA");
                             // TODO: Update the NotMeetCriteria

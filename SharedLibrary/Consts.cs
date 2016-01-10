@@ -75,13 +75,17 @@ namespace SharedLibrary
         public static readonly string MONGO_USER             = "siteUserAdmin";
         public static readonly string MONGO_PASS             = "password";
         public static readonly string MONGO_DATABASE         = "admin";
-        public static readonly string MONGO_COLLECTION       = "ProcessedApps_2015";
+        public static readonly string MONGO_COLLECTION       = "ProcessedApps_2016";
         public static readonly string REVIEWS_COLLECTION     = "ProcessedReviews";
-        public static readonly string QUEUED_APPS_COLLECTION = "QueuedApps_2015";
+        public static readonly string QUEUED_APPS_COLLECTION = "QueuedApps_2016";
         public static readonly string MONGO_AUTH_DB          = "admin";
         public static readonly int    MONGO_TIMEOUT          = 10000;
 
         // Date Time Format
         public static readonly string DATE_FORMAT       = "yyyy MMMM dd";
+
+        // Criteria
+        public static readonly int MIN_INSTALL = 1000000;
+        public static readonly double MIN_RATING = 3.5;
     }
 }
